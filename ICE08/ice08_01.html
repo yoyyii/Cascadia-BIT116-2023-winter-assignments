@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>Templagte File</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+    function myFunction() {
+        let message = "";
+        let age = document.getElementById('age').value;
+
+        if (age == 18) {
+            message = "You are exactly 18 years old!";
+            document.write(message);
+        } else if (age < 18) {
+            message = "You are less than 18 years old!"
+            document.write(message);
+        } else {
+            message = "You are greater than 18 years old!";
+            document.write(message);
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+<h2>ICE08</h2>
+
+<p>Enter your age: <input type="text" name="age" id="age" size="10"></p>  
+<button onclick="myFunction()">Calculate Age</button>
+
+</body>
+</html>
+

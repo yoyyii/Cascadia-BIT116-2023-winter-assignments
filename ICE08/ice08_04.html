@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>ice08_03</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+// We're going to use a mix of jQuery and JavaScript for this bad boy :-)
+$(document).ready( function() {
+	$("#determineGrade").click( function() {
+	    var grade = $("#grade").val(); // This gets the value entered in the 'age' input element
+	    
+	    if (!grade || isNaN(grade)) // This checks to see if text field is empty or doesn't contain a legitimate number
+		{                                      // If either, then an alert box is called to inform the user of his-or-her error
+	        alert("Hey, that is not a number!\n\nPlease try entering your grade again.\n\nThanks!");
+			$("#grade").val(""); // This sets the value back to empty
+	        return; // This return allows the user to try  again, and also stops defaulting to the final else which would show wrong message
+	    }
+	    
+		grade = Number(grade); // The Number() function converts the object argument to a number that represents the object's value.
+	    
+        switch (true) {
+            case (grade >= 90 && grade <= 100):
+                $("#output").html( "Your grade is A" );
+                break;
+            case (grade >= 80 && grade <= 89):
+                $("#output").html( "Your grade is B" );
+                break;
+            case (grade >= 70 && grade <= 79):
+                $("#output").html( "Your grade is C" );
+                break;
+            case (grade >= 60 && grade <= 69):
+                $("#output").html( "Your grade is D" );
+                break;
+            case (grade >= 0 && grade <=59):
+                $("#output").html( "Your grade is F" );
+                break;
+            default:
+                $("#output").html( "Your grade is invalid. Please enter a valid grade." );
+                $("#grade").val("");          
+        }
+
+	}); 
+});
+</script>
+</head>
+
+<body>
+
+<form action=""> Please enter your current grade: <input type="text" id="grade">
+
+<br><br>
+
+<input type="button" value="Now click this groovy button!" id="determineGrade">
+
+<br><br>
+
+<h3 id="output"></h3>
+
+</form>
+
+</body>
+</html>
+
