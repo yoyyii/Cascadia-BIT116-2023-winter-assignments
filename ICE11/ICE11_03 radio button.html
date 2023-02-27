@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Radio Button</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#convertCurrency").click( function() {
+
+			var whichOne = $('input:radio[name=money]:checked').val();
+			let startingAmount = $('#startingAmount').val();
+
+			if( whichOne === undefined )
+	       		$("#msgHere").html( "You need to make a choice!");
+	       	else if( whichOne === "R" ) {
+                let final = Number(startingAmount) * 74.40;
+	       		$("#msgHere").html(final + " Rubles");
+            } else if( whichOne === "F" ) {
+                let final = Number(startingAmount) * 0.92;
+	       		$("#msgHere").html(final + " Francs");
+            } else if( whichOne === "Y" ) {
+                let final = Number(startingAmount) * 133.58;
+	       		$("#msgHere").html(final + " Yen");
+            } else 
+	       		$("#msgHere").html( "INTERNAL ERROR: We should never execute this line of code!!");
+
+
+       });
+    });
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#convertBaking").click( function() {
+
+			var whichOne = $('input:radio[name=baking]:checked').val();
+			let startingAmount = $('#startingCup').val();
+
+			if( whichOne === undefined )
+	       		$("#msgHere2").html( "You need to make a choice!");
+	       	else if( whichOne === "quart" ) {
+                let final = Number(startingAmount) * 0.25;
+	       		$("#msgHere2").html(final + " quart");
+            } else if( whichOne === "tableSpoon" ) {
+                let final = Number(startingAmount) * 16;
+	       		$("#msgHere2").html(final + " tablespoon");
+            } else if( whichOne === "teaSpoon" ) {
+                let final = Number(startingAmount) * 48;
+	       		$("#msgHere2").html(final + " teaspoon");
+            } else 
+	       		$("#msgHere2").html( "INTERNAL ERROR: We should never execute this line of code!!");
+
+
+       });
+    });
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#convertDistance").click( function() {
+
+			var whichOne = $('input:radio[name=distance]:checked').val();
+			let startingAmount = $('#startingMile').val();
+
+			if( whichOne === undefined )
+	       		$("#msgHere3").html( "You need to make a choice!");
+	       	else if( whichOne === "ft" ) {
+                let final = Number(startingAmount) * 5280;
+	       		$("#msgHere3").html(final + " feets");
+            } else if( whichOne === "yd" ) {
+                let final = Number(startingAmount) * 1760;
+	       		$("#msgHere3").html(final + " yards");
+            } else if( whichOne === "in" ) {
+                let final = Number(startingAmount) * 63360;
+	       		$("#msgHere3").html(final + " inches");
+            } else 
+	       		$("#msgHere3").html( "INTERNAL ERROR: We should never execute this line of code!!");
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Dollar converter</h2> 
+<p>Type the starting amount (in US dollars) here:</p>
+<input type="text" id="startingAmount">
+
+<p>What would you like to convert to ?</p>
+
+<p>
+<input id="Rubles" type="radio" name="money" value="R"> Rubles<br/>
+<input id="Francs" type="radio" name="money" value="F"> Francs<br/>
+<input id="Yen" type="radio" name="money" value="Y"> Yen<br/>
+<input type="button" id="convertCurrency" value="Submit my answer">
+<form>
+<p id="msgHere"></p>
+<!---->
+
+<h2>Baking units of measurement converter</h2> 
+<p>Type the amount of Cups here:</p>
+<input type="text" id="startingCup">
+
+<p>What would you like to convert to ?</p>
+
+<p>
+<input id="quart" type="radio" name="baking" value="quart"> Quart<br/>
+<input id="tableSpoon" type="radio" name="baking" value="tableSpoon"> Tablespoon<br/>
+<input id="teaSpoon" type="radio" name="baking" value="teaSpoon"> Teaspoon<br/>
+<input type="button" id="convertBaking" value="Submit my answer">
+<form>
+<p id="msgHere2"></p>
+<!---->
+
+<h2>Distance units of measurement converter</h2> 
+<p>Type the distance in mile here:</p>
+<input type="text" id="startingMile">
+
+<p>What would you like to convert to ?</p>
+
+<p>
+<input id="feet" type="radio" name="distance" value="ft"> feet<br/>
+<input id="yard" type="radio" name="distance" value="yd"> yard<br/>
+<input id="inch" type="radio" name="distance" value="in"> inch<br/>
+<input type="button" id="convertDistance" value="Submit my answer">
+<form>
+<p id="msgHere3"></p>
+
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Radio Button</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+			var whichOne = $('input:radio[name=temp]:checked').val();
+			let temp = $('#startingTemp').val();
+
+			if( whichOne === undefined )
+	       		$("#msgHere").html( "You need to make a choice!");
+	       	else if( whichOne === "C" ) {
+                temp = (Number(temp) - 32) * (5/9)
+	       		$("#msgHere").html(temp + " Celsius");
+            } else if( whichOne === "F" ) {
+                temp = (Number(temp) * (9/5)) +32;
+	       		$("#msgHere").html(temp + " Fahrenheit");
+            }
+	       	else 
+	       		$("#msgHere").html( "INTERNAL ERROR: We should never execute this line of code!!");
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Temp converter</h2> 
+<form>
+<h3>Enter current temperature</h3>
+<p>
+<input type="text" id="startingTemp" ><br/>
+<input type="radio" id="convertToC" name="temp" value="C">convert to Celsius<br/> 
+<input type="radio" id="convertToF" name="temp" value="F">convert to Fahrenheit<br/>
+<input type="button" id="getFeedback" value="Click here to convert">
+</p>
+</form>
+
+<p id="msgHere"></p>
+
+</body>
+</html>
+

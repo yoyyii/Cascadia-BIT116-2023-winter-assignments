@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICE11_01 check box</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+		var startingText = "Your choice: "	
+        var feedback = startingText;
+			if( $('#chocolate').is(':checked') )
+				feedback = feedback + "chocolate";
+
+			if( $('#matcha').is(':checked') )
+				feedback = feedback + ", matcha";
+				
+			if( $('#mint').is(':checked') )
+				feedback = feedback + ", mint";
+
+			if( $('#lavender').is(':checked') )
+				feedback = feedback + ", lavender";
+			
+			if( feedback == startingText) // if no options were chosen
+				feedback = "Wait - you didn't want any ice cream?";
+			else
+				feedback = feedback + " does taste good.";
+
+       		$("#msgHere").html( feedback );
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Check boxes</h2> 
+<form>
+<h3>What flavour do you want for your ice cream?</h3>
+<p>
+<input id="chocolate"  type="checkbox">chocolate<br/>
+<input id="matcha" type="checkbox"> matcha<br/>
+<input id="mint" type="checkbox"> mint<br/>
+<input id="lavender" type="checkbox"> lavender<br/>
+<input type="button" id="getFeedback" value="Submit my answer">
+</p>
+</form>
+
+<p id="msgHere"></p>
+
+</body>
+</html>

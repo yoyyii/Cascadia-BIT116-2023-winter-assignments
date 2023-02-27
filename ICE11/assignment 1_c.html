@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<title>Assignment 1 (B) Yoyi Liao</title>
+<script src="assignment 1_b.js"></script>
+<style>
+body {
+	  background-color:#033;
+}
+
+table {
+	border: 6px #066 solid;
+}
+
+h1, h2, h3 {
+	color:#6CC;
+	font:27px Futura, 'Century Gothic', AppleGothic, sans-serif;
+	padding: 5px;
+}
+
+#content {
+  width: 300px ;
+  margin-left: auto ;
+  margin-right: auto ;
+  background-color:#033;
+}
+
+input[type=button] {
+    font:26px Futura, 'Century Gothic', AppleGothic, sans-serif;
+    font-size:200%;
+    cursor:pointer;
+	width: 67px;
+}
+
+input[type=button]:hover {
+    background-color: #8ED7C8;
+	color:#900;
+}
+
+input[type=text] {
+    font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
+	font-size: 26px;
+	background-color:#FFC;
+	color:#03C;
+	width:98%;
+}
+
+.blackbo {
+	background-color:#000;
+	border: 6px #066 solid;
+}
+</style>
+</head>
+<body>
+
+<h2>Yoyi Liao</h2> <!-- Replace "Your Name Goes Here!" with your first and last name, thanks! -->
+
+<div id="content">
+
+<h2 class="blackbo">A1: A Basic Calculator</h2>
+<form name="calc"> <!-- NOTE: The name of the form is "calc" -->
+<table>
+	<tr>
+		<td>
+		<input type="text" name="output" id="output"> <!-- NOTE: The name of the textbox is "output" -->
+		<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+    <!-- HINT: See Lecture 6 examples and PowerPoint slides -->       
+		<input type="button" name="one" value = "1" onclick="calcu('1');"> <!-- 1 -->
+		<input type = "button" name = "two" value = "2" onclick="calcu('2');"> <!-- 2 -->
+		<input type = "button" name = "three" value = "3" onclick="calcu('3');"> <!-- 3 -->
+		<input type = "button" name = "add" value = "+" onclick="calcu('+');"> <!-- + -->
+		<br>
+		<input type = "button" name = "four" value = "4" onclick="calcu('4');"> <!-- 4 -->
+		<input type = "button" name = "five" value = "5" onclick="calcu('5');"> <!-- 5 -->
+		<input type = "button" name = "six" value = "6" onclick="calcu('6');"> <!-- 6 -->
+		<input type = "button" name = "subtract" value = "-" onclick="calcu('-');"> <!-- - -->
+		<br>
+		<input type = "button" name = "seven" value = "7" onclick="calcu('7');"> <!-- 7 -->
+		<input type = "button" name = "eight" value = "8" onclick="calcu('8');"> <!-- 8 -->
+		<input type = "button" name = "nine" value = "9" onclick="calcu('9');"> <!-- 9 -->
+		<input type = "button" name = "multiply" value = "x" onclick="calcu('*');"> <!-- * -->
+		<br>
+		<input type = "button" name = "clear" value = "ce" onclick="calcu('ce');"> <!-- '' -->
+		<input type = "button" name = "zero" value = "0" onclick="calcu('0');"> <!-- 0 -->
+		<input type = "button" name = "evaluate" value = " = " onclick="calcu('=');"> <!-- eval() -->
+		<input type = "button" name = "divide" value = "&divide;" onclick="calcu('/');"> <!-- / -->
+		<br>
+		</td>
+	</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

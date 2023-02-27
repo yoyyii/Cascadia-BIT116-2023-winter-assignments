@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Radio Button</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+			var whichOne = $('input:radio[name=veggie]:checked').val();
+            let feedback;
+
+			if( whichOne === undefined )
+	       		$("#msgHere").html( "You need to make a choice!");
+	       	else if( whichOne === "T" ) {
+                feedback = "Tomato is good for you! ";       		
+            } else if( whichOne === "B" ) {
+                feedback = "Beet does taste good! "; 
+            } else if( whichOne === "C" ) {
+                feedback = "Carrot is a good choice! "; 
+            } else if( whichOne === "P" ) {
+                feedback = "Yummy Potato!"; 
+            }
+	       	else 
+	       		$("#msgHere").html( "INTERNAL ERROR: We should never execute this line of code!!");
+            $("#msgHere").html(feedback);
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Veggie Feedback </h2> 
+<form>
+<h3>Pick a veggie</h3>
+<p>
+
+<input type="radio" id="Tomato" name="veggie" value="T">Tomato<br/> 
+<input type="radio" id="Beet" name="veggie" value="B">Beet<br/>
+<input type="radio" id="Carrot" name="veggie" value="C">Carrot<br/>
+<input type="radio" id="Potato" name="veggie" value="P">Potato<br/>
+
+<input type="button" id="getFeedback" value="Click here to get feedback">
+</p>
+</form>
+
+<p id="msgHere"></p>
+
+</body>
+</html>
+

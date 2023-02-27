@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+<meta charset="utf-8">
+<title>Radio Button</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#convertCurrencyTo").click( function() {
+
+			var convertFrom = $('input:radio[name=money]:checked').val();
+            let convertTo = $('input:radio[name=money2]:checked').val();
+			let startAmount = $('#inputDollar').val();
+
+			if( convertFrom === undefined || convertTo === undefined) {
+	       		$("#msgHere").html("You need to make a choice!");
+            } else if (convertFrom === convertTo) {
+                $("#msgHere").html("$" + startAmount);
+            } else if (convertFrom === "U") {
+                if (convertTo === "R") {
+                    let final = Number(startAmount) * 74.40;
+	       		    $("#msgHere").html(final + " Rubles");
+                } else if (convertTo === "F") {
+                    let final = Number(startAmount) * 0.92;
+	       		    $("#msgHere").html(final + " Francs");
+                } else if (convertTo === "Y") {
+                    let final = Number(startAmount) * 133.58;
+	       		    $("#msgHere").html(final + " Yen");
+                }
+            } else if (convertFrom === "R") {
+                if (convertTo === "U") {
+                    let final = Number(startAmount) * 0.02;
+	       		    $("#msgHere").html(final + " US dollar");
+                } else if (convertTo === "F") {
+                    let final = Number(startAmount) * 0.01;
+	       		    $("#msgHere").html(final + " Francs");
+                } else if (convertTo === "Y") {
+                    let final = Number(startAmount) * 1.79;
+	       		    $("#msgHere").html(final + " Yen");
+                }
+            } else if (convertFrom === "F") {
+                if (convertTo === "R") {
+                    let final = Number(startAmount) * 80.68;
+	       		    $("#msgHere").html(final + " Rubles");
+                } else if (convertTo === "U") {
+                    let final = Number(startAmount) * 1.08;
+	       		    $("#msgHere").html(final + " US dollar");
+                } else if (convertTo === "Y") {
+                    let final = Number(startAmount) * 145.16;
+	       		    $("#msgHere").html(final + " Yen");
+                }
+            } else if (convertFrom === "Y") {
+                if (convertTo === "R") {
+                    let final = Number(startAmount) * 0.56;
+	       		    $("#msgHere").html(final + " Rubles");
+                } else if (convertTo === "F") {
+                    let final = Number(startAmount) * 0.01;
+	       		    $("#msgHere").html(final + " Francs");
+                } else if (convertTo === "U") {
+                    let final = Number(startAmount) * 0.01;
+	       		    $("#msgHere").html(final + " US dollar");
+                }
+            }
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Dollar converter</h2> 
+<p>What would you like to convert from?</p>
+
+<p>
+<input id="USdollar" type="radio" name="money" value="U"> US dollar<br/>
+<input id="Rubles" type="radio" name="money" value="R"> Rubles<br/>
+<input id="Francs" type="radio" name="money" value="F"> Francs<br/>
+<input id="Yen" type="radio" name="money" value="Y"> Yen<br/>
+</p>
+
+<input id="inputDollar" type="text">
+
+<p>What would you like to convert to?</p>
+
+<p>
+<input id="USdollar2" type="radio" name="money2" value="U"> US dollar<br/>
+<input id="Rubles2" type="radio" name="money2" value="R"> Rubles<br/>
+<input id="Francs2" type="radio" name="money2" value="F"> Francs<br/>
+<input id="Yen2" type="radio" name="money2" value="Y"> Yen<br/>
+
+</p>
+<input type="button" id="convertCurrencyTo" value="Submit my answer">
+
+<p id="msgHere"></p>
+
+</body>
+</html>
+

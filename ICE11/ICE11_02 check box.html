@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICE11_02 check box</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getFeedback").click( function() {
+
+		var startingAmount = $('#startingAmount').val();
+        var feedback = startingAmount;
+			if( $('#USdollar').is(':checked') )
+				feedback = "Convert to US dollar: $" + feedback + ". ";
+
+			if( $('#Rubles').is(':checked') ) {
+                var Rubles = Number(startingAmount) * 74.40;
+				feedback = feedback + "Convert to Rubles: $" + Rubles + ". ";
+            }
+				
+			if( $('#Francs').is(':checked') ) {
+                var Francs = Number(startingAmount) * 0.92;
+				feedback = feedback + "Convert to Francs: $" + Francs + ". ";
+            }
+
+			if( $('#Yen').is(':checked') ) {
+                var yen = Number(startingAmount) * 133.58;
+				feedback = feedback + "Convert to Yen: $" + yen + ". ";
+            }
+			
+			if( feedback == startingAmount) // if no options were chosen
+				feedback = "Please check at least one box";
+			
+       		$("#msgHere").html( feedback );
+
+
+       });
+    });
+</script>
+
+</head>
+
+<body>
+
+<h2>Check boxes</h2> 
+<form>
+<h3>Currency Converter</h3>
+
+<p>Type the starting amount (in US dollars) here:</p>
+<input type="text" id="startingAmount">
+
+<p>What would you like to convert to (check off all that you want to see the conversion to)?</p>
+
+<p>
+<input id="USdollar"  type="checkbox" name="checkbox">US dollar<br/>
+<input id="Rubles" type="checkbox" name="checkbox"> Rubles<br/>
+<input id="Francs" type="checkbox" name="checkbox"> Francs<br/>
+<input id="Yen" type="checkbox" name="checkbox"> Yen<br/>
+<input type="button" id="getFeedback" value="Submit my answer">
+</p>
+</form>
+
+<p id="msgHere"></p>
+
+</body>
+</html>
