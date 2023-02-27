@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Ice12 part 1</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--		<script type="text/javascript" src="jquery-1.7.1.js"></script> -->
+        <script>
+$(document).ready( function() {
+   
+    //Option 2 function
+	$("#findInArray").click( function() {
+        $("#findOutput").html( "" );
+		var valueArray = [1, 1, 2, 3, 4, 1, 3];
+        var target = $("#findTarget").val();
+	
+		// check each element of the array to see if it's what we're looking for
+		for (i in valueArray) {
+			if( valueArray[i] != target) {
+                $("#findOutput").append( "Found " + valueArray[i] + " at array slot " + i  + "<br />");
+            } 
+		}
+	});
+
+    // Option 3 function
+	$("#lessThan").click( function() {
+        $("#printAllOutput").html( "" );
+		var valueArray = [1, 1, 2, 3, 4, 1, 3];
+        var target = $("#findTarget").val();
+        var less = 0;
+	
+		
+		for (var i = 0; i < valueArray.length; i++) {
+            if (valueArray[i] < target) { 
+			    $("#printlessThan").append( "array slot " + i + "'s value is " + valueArray[i] + ", which is less than your input" + "<br />" );
+                less += 1; 
+            }
+		}
+
+        if (less == 0) {
+            $("#printlessThan").html("no value in the array is less than your input");
+        }
+	});
+
+});
+        </script>
+    </head>
+    <body>
+        <!--Option 2-->
+        <p>What value do you want to check for?<br/>
+        <input type="text" id="findTarget">
+        <input type="button" value="Where this value does not present in the array?" id="findInArray"><br/>
+        <h1>Output from 'FindInArray':</h1>
+        <p id="findOutput"></p>
+        <hr/>
+        
+        <!--Option 3-->
+        <input type="button" value="value less than your input" id="lessThan"><br/>
+        <h1>Output from 'lessThan':</h1>
+        <p id="printlessThan"></p>
+        <hr/>
+    </body>
+</html>

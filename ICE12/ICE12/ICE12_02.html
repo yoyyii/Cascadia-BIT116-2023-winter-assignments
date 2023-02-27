@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ICE12 part 2</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--		<script type="text/javascript" src="jquery-1.7.1.js"></script> -->
+        <script>
+$(document).ready( function() {
+   
+    //option 1 function
+    $("#average").click( function() {
+		var nums = [10, 20, 30, -10];
+	
+        sum = 0;
+		for (var i = 0; i < nums.length; i++) {
+			sum += nums[i]
+		}
+
+        var avg = sum / (nums.length);
+		
+		$("#averageOutput").html( "average is: " + avg);
+	});
+    
+    //option 2 function
+	$("#findMaximum").click( function() {
+		var nums = [10, 20, 2, -4, -2]
+		var maxIndex = 0;	
+		var maxValue = nums[0];
+		// check each element of the array to see if it's what we're looking for
+		for (i in nums) {
+			if( nums[i] > maxValue) {
+				maxIndex = i;
+				maxValue = nums[i];
+            }
+		}
+        $("#findMaximumOutput").html( "Largest value is " + maxValue + " (located at slot "  + maxIndex + " in the array)");
+	});
+
+});
+        </script>
+    </head>
+    <body>
+
+        <!--Option 1-->
+        
+        <h1>Output from 'average':</h1>
+        <input type="button" value="find average" id="average"><br/>
+        <p id="averageOutput"></p>
+        <hr/>
+        
+        <!--Option 2-->
+        <h1>Output from 'findMaximum':</h1>
+        <p>&nbsp;<input type="button" value="Find maximum" id="findMaximum"><br/>
+        <p id="findMaximumOutput"></p>
+        <hr/>
+        
+    </body>
+</html>
