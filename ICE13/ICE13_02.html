@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>ICE 13 Part 2</title>
+
+<script>
+    function overFunction() {
+        let overMessage = "I am so very tired...";
+        document.getElementById('message').innerHTML = overMessage;
+        document.getElementById('duck').src = 'duck2.jpg';
+    }
+</script> 
+
+<script>
+    function outFunction() {
+        let outMessage = "Now I am wide awake!";
+        document.getElementById('message').innerHTML = outMessage;
+        document.getElementById('duck').src = 'duck3.jpg';
+    }
+</script>
+
+<script>
+    function downFunction() {
+        location.reload();
+    }
+</script>
+
+</head>
+
+<body>
+
+<h2>ICE 13: Drake the Duck</h2>
+
+<img src="duck1.jpg" id=duck alt="Drake the Duck" onmouseover="overFunction()" onmouseout="outFunction()">
+	  
+<h2 id="message" onmousedown="downFunction()">I am Drake the Duck.</h2>
+
+</body>
+</html>
