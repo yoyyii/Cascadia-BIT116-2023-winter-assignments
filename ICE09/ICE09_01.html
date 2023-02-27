@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>Templagte File</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+    function myFunction() {
+        var myFamily = ["Aileen","Peter","Sylvia","Luna"];
+        var familyName = " ";
+        for (var i = 0; i < myFamily.length; i++) {
+            familyName = familyName + myFamily[i] + " ";
+        }
+        document.getElementById('display').innerHTML = familyName;
+    }
+</script>
+
+</head>
+<body>
+
+<h2>ICE09_01</h2>
+
+<button onclick="myFunction()">Click me</button>
+<h2 id="display"></h2>
+
+</body>
+</html>
+

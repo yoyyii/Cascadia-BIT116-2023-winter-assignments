@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>Templagte File</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+    function myFunction() {
+        var myFamily = new Array();
+        myFamily[0] = "Aileen";
+        myFamily[1] = "Peter";
+        myFamily[2] = "Sylvia";
+        myFamily[3] = "luna";
+        myFamily[4] = "Bob";
+        myFamily[5] = "jack";
+        myFamily[6] = "Tom";
+        myFamily[7] = "John";
+        myFamily[8] = "ashley";
+
+        var familyName = " ";
+        for (var i = 0; i < myFamily.length; i++) {
+            familyName = familyName + myFamily[i] + " ";
+        }
+        document.getElementById('display').innerHTML = "Before sorting: " + familyName;
+
+        familyName = "";
+        myFamily.sort();
+        for (var i = 0; i < myFamily.length; i++) {
+            familyName = familyName + myFamily[i] + " ";
+        }
+        document.getElementById('display2').innerHTML = "After sorting: " + familyName;
+
+    }
+</script>
+
+</head>
+<body>
+
+<h2>ICE09_05</h2>
+
+<button onclick="myFunction()">Click me</button>
+<h2 id="display"></h2>
+<h2 id="display2"></h2>
+
+</body>
+</html>
+
