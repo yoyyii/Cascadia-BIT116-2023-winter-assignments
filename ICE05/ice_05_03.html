@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>ICE 05 03</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script>
+	$(document).ready(function() {
+       //A single line of code goes here
+	   $("table tr:odd").addClass('highlight');
+       $("table tr:even").addClass('highlight2');
+       $('a').click(function(){
+		 $('tr:odd').slideToggle();
+       });
+	   /*  You want to select the table row tr tag, filter it by the odd rows, and add the highlight class to it
+	       I recommend looking at the source code of the selector04.html file to get an idea how to do this
+	    */
+        
+       
+    });
+</script>
+
+<style>
+	.highlight { background-color: #ffcc66;}
+	td { border: 1px solid #336699; padding: 8px; font-family: arial; color: #660099}
+</style>
+    
+<style>
+    .highlight2 {
+    background-color: #FFFF00;}
+</style>
+
+</head>
+
+<body>
+
+<h2>ICE 05 03</h2>
+<!-- do not add IDs or classes to the elements -->
+<table>
+	<tr><td>Row 01 - Index 0</td></tr>
+	<tr><td>Row 02 - Index 1</td></tr>
+	<tr><td>Row 03 - Index 2</td></tr>
+	<tr><td>Row 04 - Index 3</td></tr>
+	<tr><td>Row 05 - Index 4</td></tr>
+	<tr><td>Row 06 - Index 5</td></tr>
+	<tr><td>Row 07 - Index 6</td></tr>
+	<tr><td>Row 08 - Index 7</td></tr>
+	<tr><td>Row 09 - Index 8</td></tr>
+	<tr><td>Row 10 - Index 9</td></tr>
+</table>
+    <a href="#">Toggle</a>
+
+</body>
+</html>
+
