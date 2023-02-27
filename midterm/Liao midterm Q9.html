@@ -1,0 +1,30 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8">
+<title>jQuery02 Example File</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+
+<!-- insert code here -->
+function displayNumber() {
+    let num = document.getElementById("theInput").value; 
+    
+    if (!Number(num)) {
+        document.getElementById('msgHere').innerHTML = "please enter a number";
+    } else {
+        document.getElementById('msgHere').innerHTML = `${Number(num)}, ${(Number(num) + 4)}`;
+    }
+}
+
+</script>
+</head>
+<body>
+<form>
+  <input type="text" id="theInput">
+  <input type="button" value="Click here" id="theButton" onclick="displayNumber()">
+  <p id="msgHere"></p>
+</form>
+</body>
+</html>
