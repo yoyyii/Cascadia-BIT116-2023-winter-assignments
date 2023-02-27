@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Yoyi Liao">
+<title>Templagte File</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+    
+<body>
+
+
+<h2>Calculating the Sales Tax on a Purchase</h2>
+
+    
+  <button onclick="myFunction()">price after tax</button>
+
+<p id="price"></p>
+
+<script>
+function myFunction() {
+  let price = prompt("Please enter the price of your item", " ");
+  if (price != null) {
+     var tax = 0.09;
+    alert("Your item's price after tax is: " + ((price * tax)+parseInt(price)));
+  }
+}
+          
+</script>
+    
+
+</body>
+</html>
+
