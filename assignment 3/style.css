@@ -1,0 +1,42 @@
+body {
+	background-color: #C1D0B7;
+	margin:20px;
+}
+
+section {
+	background-color:#FFC;
+	width:360px;
+	padding:15px;
+	border:solid thin #000;
+}
+
+
+
+img {
+	border: solid thin #000;
+	margin-left:80px;
+}
+
+h2 {
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-left:60px;
+}
+
+h3 {
+	font-family: Tahoma, Geneva, sans-serif;
+	margin-left:84px;
+}
+p {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+input {
+	color: #309;
+	font-size: 11pt;
+}
+
+.container {
+	width: 400px;
+	margin-left:auto;
+	margin-right:auto;
+}
