@@ -1,0 +1,90 @@
+/* style.css - BIT116 - Assignment 4: State Capitals Guessing Game */
+
+body {
+	background-color: #003;
+}
+
+.blueBg {
+	background-color: #006;
+	border:medium solid #030;
+}
+h1, h2 {
+	font-family: Helvetica, sans-serif, Verdana, Arial;
+	color: #FFFFFF;
+	text-align: center
+}
+.container {
+	width: 406px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.tab { 
+	border: solid 1 #000;
+}
+
+table {
+	background-color: #FFF;
+	padding: 2px;
+	border:medium solid #030;
+}
+.td1 { 
+	font-family: Helvetica, sans-serif, Verdana, Arial; 
+	font-size: 13; 
+	font-weight: 300; 
+	background-color: #900; 
+	color: #FFFFFF; 
+	border: 0; 
+	width:404px;
+}
+
+.txt1 { 
+	font-family: Helvetica, sans-serif, Verdana, Arial; 
+	font-size: 12pt; 
+	font-weight: 300; 
+	background-color: #900; 
+	color: #fff; 
+	border: 0; 
+	width:402px;
+	padding: 2px;
+}
+
+.txt2 { 
+	font-family: Helvetica, sans-serif, Verdana, Arial; 
+	font-size: 12pt; 
+	font-weight: normal; 
+	border: solid 3px #033; 
+	width: 402px;
+	background-color: #FF9;
+	color:#039;
+}
+
+.btn { 
+	font-family: Helvetica, sans-serif, Verdana, Arial; 
+	font-size: 12pt; 
+	font-weight:300;
+	background-color: #009; 
+	color: #FFF; 
+	cursor: hand; 
+	margin: 4px;
+}
+
+.resetBtn
+{ 
+	font-family: Helvetica, sans-serif, Verdana, Arial; 
+	font-size: 12pt; 
+	font-weight:300;
+	background-color: #900; 
+	color: #FFF; 
+	cursor: hand; 
+	margin: 4px;
+}
+
+input[type=button]:hover {
+    background-color: #F00;
+	color: #000;
+	border:solid #033 2px;
+}
+input[type=button] {
+    border:solid #033 2px;
+}
